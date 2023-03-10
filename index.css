@@ -10,7 +10,7 @@ body {
 
 main {
     width: 60%;
-    height: 2407px;
+    /* height: 2407px; */
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -84,14 +84,17 @@ main div#quickcontacts a {
 div#middle {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
-    border-radius: 30px;
-    position: relative;
-    top: -550px;
-    padding-top: 600px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: space-around;
 }
 
 div#middle div.project {
-    width: calc(100% / 3);
+    width: 25%;
+    height: 300px;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -107,11 +110,18 @@ div#middle div.project img {
 
 div#middle div.project h6 {
     font-size: 20px;
+    margin-bottom: 40px;
 }
 
-div#bottom {
-    position: relative;
-    padding-top: 1720px;
-    position: relative;
-    top: -2225px;
+div#middle div.project a {
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 10px;
+    background: #e30086;
+    color: white;
 }
+
+div#bottom {}
