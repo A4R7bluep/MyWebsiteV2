@@ -4,13 +4,16 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom right, #07040c, #242a5b);
+    /* background-image: linear-gradient(to bottom right, #07040c, #242a5b); */
     font-family: 'Ubuntu', Calibri;
+    background-color: black;
+    background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=4000&q=100');
+    background-position: center;
+    background-size: cover;
 }
 
 main {
     width: 60%;
-    /* height: 2407px; */
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -21,7 +24,17 @@ main {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
     border-radius: 30px;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
+}
+
+hr {
+    width: 400px;
+    margin: 5px 0px;
+    height: 5px;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+
 }
 
 main>div {
@@ -33,7 +46,6 @@ div#top {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
     border-radius: 30px;
-    height: 450px;
     font-size: 20px;
 }
 
@@ -47,7 +59,12 @@ div#top h3 {
     margin-bottom: 10px;
 }
 
-div#top img#portrait {
+div#top table td {
+    vertical-align: top;
+}
+
+div#top div#portrait {
+    background: url("ross.png") no-repeat center -10px / cover;
     float: left;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
@@ -55,21 +72,30 @@ div#top img#portrait {
     box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     width: 200px;
-    margin-right: 30px;
+    height: 200px;
 }
 
 div#top p {
     float: left;
-    width: 75%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 15px;
+    line-height: 1.5;
+    margin-left: 30px;
 }
 
-main div#quickcontacts {
+div#top div#quickcontacts {
     height: 60px;
-    position: relative;
-    top: 100px;
+    /* position: relative;
+    top: 100px; */
+    float: right;
+    width: 100%;
 }
 
-main div#quickcontacts a {
+div#top div#quickcontacts a {
     float: right;
     margin: 5px;
     margin-top: 10px;
@@ -79,6 +105,13 @@ main div#quickcontacts a {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
     border-radius: 20px;
+}
+
+div#top::after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
 }
 
 div#middle {
@@ -93,14 +126,14 @@ div#middle {
 }
 
 div#middle div.project {
-    width: 25%;
-    height: 300px;
+    width: 40%;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 5px 45px rgba(255, 255, 255, 0.1);
     border-radius: 30px;
     padding: 20px;
+    padding-bottom: 35px;
     float: left;
 }
 
