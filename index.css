@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +30,7 @@ main {
 }
 
 hr {
-    width: 400px;
+    width: 45%;
     margin: 5px 0px;
     height: 5px;
     background-color: white;
@@ -51,14 +53,20 @@ div#top {
     font-size: 20px;
 }
 
-div#top h1 {}
+div#top h1 {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 500;
+}
 
 div#top h2 {
     margin-bottom: 20px;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 400;
 }
 
 div#top h3 {
     margin-bottom: 10px;
+    font-weight: 400;
 }
 
 div#top table td {
@@ -91,8 +99,6 @@ div#top p {
 
 div#top div#quickcontacts {
     height: 60px;
-    /* position: relative;
-    top: 100px; */
     float: right;
     width: 100%;
 }
@@ -130,7 +136,7 @@ div#middle {
 }
 
 div#middle div.project {
-    width: 30%;
+    width: 26%;
     border: 1px solid rgba(255, 255, 255, 0.4);
     border-right: 1px solid rgba(255, 255, 255, 0.2);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
@@ -139,6 +145,7 @@ div#middle div.project {
     padding: 20px;
     padding-bottom: 35px;
     float: left;
+    margin-bottom: 50px;
 }
 
 div#middle div.project img {
@@ -160,6 +167,7 @@ div#middle div.project a {
     background: #e30086;
     color: white;
     width: 100%;
+    font-size: 1em;
 }
 
 
@@ -176,4 +184,40 @@ div#bottom table td:nth-of-type(1) {
 
 div#bottom table td:nth-of-type(2) p {
     height: 30px;
+}
+
+@media screen and (max-width: 1138px) {
+    main {
+        width: 80%;
+    }
+
+    div#top div#portrait {
+        height: 150px;
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    hr {
+        width: 60%;
+    }
+
+    div#middle div.project {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    hr {
+        width: 100%;
+    }
+
+    div#top div#portrait {
+        height: 100px;
+        width: 100px;
+    }
+
+    div#middle div.project {
+        width: 100%;
+    }
 }
