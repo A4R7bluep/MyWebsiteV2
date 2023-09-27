@@ -8,7 +8,9 @@
 
 body {
     font-family: 'Ubuntu', Calibri;
-    background-image: url('https://images.unsplash.com/photo-1677137340058-a0c01a4c0a5a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzkxMTM1MTg&ixlib=rb-4.0.3&q=80');
+    /* background-image: url('https://images.unsplash.com/photo-1677137340058-a0c01a4c0a5a?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2NzkxMTM1MTg&ixlib=rb-4.0.3&q=80'); */
+    background: url('black_n_white.png') no-repeat;
+    background-size: cover;
     background-position: center;
 }
 
@@ -24,7 +26,7 @@ main {
 .card {
     padding: 35px;
     border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 20px;
+    border-radius: 15px;
     box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
     background-color: rgba(17, 25, 40, 0.5);
     backdrop-filter: blur(25px) saturate(150%);
@@ -77,6 +79,11 @@ div#top div#portrait {
     float: left;
     width: 200px;
     height: 200px;
+    grid-area: portrait;
+}
+
+div#top p#aboutText {
+    grid-area: text;
 }
 
 div#top p {
@@ -86,17 +93,43 @@ div#top p {
     margin-left: 30px;
 }
 
-div#top div#quickcontacts {
-    height: 60px;
-    float: right;
-    width: 100%;
+div#top div#about > div {
+    display: grid;
+    /* grid-template-columns: auto auto auto auto; */
+    grid-template-areas: 'portrait text';
+} 
+
+main div#quickcontacts {
+    height: 0px;
+    width: 0px;
+    padding: 0;
+    margin: 0;
 }
 
-div#top div#quickcontacts a {
+main div#quickcontacts a {
     float: right;
     margin: 5px;
     margin-top: 10px;
     padding: 20px 20px 17px 20px;
+    position: fixed;
+    right: -50px;
+    background-color: rgba(17, 25, 40, 0.75);
+}
+
+main div#quickcontacts a:nth-of-type(1) {
+    top: 200px;
+}
+
+main div#quickcontacts a:nth-of-type(2) {
+    top: 280px;
+}
+
+main div#quickcontacts a:nth-of-type(3) {
+    top: 360px;
+}
+
+main div#quickcontacts a:nth-of-type(4) {
+    top: 440px;
 }
 
 div#top::after {
@@ -133,7 +166,7 @@ div#middle div.project h6 {
     margin-bottom: 40px;
 }
 
-div#middle div.project a {
+div#middle div.project a:not(:has(img)) {
     padding: 10px;
     background: #e30086;
     color: white;
@@ -143,7 +176,7 @@ div#middle div.project a {
 
 
 /* Bottom Styles */
-div#bottom table {
+/* div#bottom table {
     font-size: 20px;
 }
 
@@ -153,11 +186,30 @@ div#bottom table td:nth-of-type(1) {
 
 div#bottom table td:nth-of-type(2) p {
     height: 30px;
+} */
+
+/* Footer Styles */
+footer {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: none;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    background-color: rgba(17, 25, 40, 0.5);
+    backdrop-filter: blur(25px) saturate(150%);
 }
+
+/* Media styles */
 
 @media screen and (max-width: 1138px) {
     main {
-        width: 80%;
+        width: 75%;
     }
 
     div#top div#portrait {
@@ -166,9 +218,26 @@ div#bottom table td:nth-of-type(2) p {
     }
 }
 
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 875px) {
     hr {
         width: 60%;
+    }
+
+    div#top div#portrait {
+        height: 250px;
+        width: 250px;
+        margin-bottom: 50px;
+    }
+
+    div#top p#aboutText {
+        margin: 0;
+    }
+
+    div#top div#about > div {
+        width: 100%;
+        grid-template-areas:
+            'portrait'
+            'text';
     }
 
     div#middle div.project {
@@ -176,17 +245,27 @@ div#bottom table td:nth-of-type(2) p {
     }
 }
 
-@media screen and (max-width: 668px) {
+@media screen and (max-width: 680px) {
+    main {
+        width: 80%;
+    }
+
     hr {
         width: 100%;
     }
 
-    div#top div#portrait {
-        height: 100px;
-        width: 100px;
-    }
-
     div#middle div.project {
         width: 100%;
+    }
+
+    main div#quickcontacts a {
+        right: -0px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    div#top div#portrait {
+        height: 250px;
+        width: 250px;
     }
 }
